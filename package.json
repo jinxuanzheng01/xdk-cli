@@ -1,0 +1,22 @@
+{
+  "name": "xdk-cli",
+  "version": "1.0.4",
+  "description": "小打卡cli工具包",
+  "main": "bin/index.js",
+  "bin": {
+    "ce": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "xuan_lazy",
+  "license": "ISC",
+  "dependencies": {
+    "@moyuyc/inquirer-autocomplete-prompt": "^1.3.2",
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "fuzzy": "^0.1.3",
+    "json-format": "^1.0.1"
+  }
+}
