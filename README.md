@@ -53,7 +53,7 @@ module.exports = {
       component
 ```
 
-##### 创建page
+#### 创建page
 
 ```bash
     # 输入页面名称
@@ -67,7 +67,7 @@ module.exports = {
 ```
 
 
-##### 创建component
+#### 创建component
 
 ```bash
     # 输入组件名称
@@ -90,7 +90,7 @@ module.exports = {
 ```
 
 
-##### 自定义模版文件
+#### 自定义模版文件
 
 每个项目可能需要的模版都不太一致，xdk-cli提供一个文件夹插槽，方便自定义需要使用的模版
 
