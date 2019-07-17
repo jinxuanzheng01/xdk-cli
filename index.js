@@ -20,7 +20,6 @@ program.version(version, '-v, --version');
 
 /* = deal receive command
 -------------------------------------------------------------- */
-
 program
     .command('create')
     .description('创建页面或组件')
