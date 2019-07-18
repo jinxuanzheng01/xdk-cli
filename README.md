@@ -105,10 +105,11 @@ module.exports = {
         template: './template'
     };
 ```
-xiaocheng目录结构如下，component同理
+小程序目录结构如下，component同理
 
 ![1563431286470.jpg](https://cdn.nlark.com/yuque/0/2019/jpeg/268444/1563431296214-3e22f795-aed5-4a6e-aa35-b31ed389ce2d.jpeg#align=left&display=inline&height=314&name=1563431286470.jpg&originHeight=314&originWidth=278&size=23556&status=done&width=278)
-联系我
+
+# 联系我
 
 如果你有好的意见或建议，欢迎扫面下面二维码交流 👇
 
