@@ -26,7 +26,7 @@
 
 ### 创建配置文件
 
-需要在项目目录下创建cli.config.js
+需要在项目目录下创建xdk.config.js
 
 ```javacript
 module.exports = {
