@@ -1,6 +1,6 @@
 {
   "name": "xdk-cli",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "小打卡cli工具包",
   "main": "bin/index.js",
   "bin": {

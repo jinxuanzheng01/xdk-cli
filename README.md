@@ -105,12 +105,9 @@ module.exports = {
         template: './template'
     };
 ```
+xiaocheng目录结构如下，component同理
 
-目录结构如下，component同理
-
-![image.png](https://cdn.nlark.com/yuque/0/2019/png/268444/1563347912695-c478a767-8c49-4836-b3cd-a7bb14bb8426.png#align=left&display=inline&height=230&name=image.png&originHeight=230&originWidth=282&size=19725&status=done&width=282)
-
-
+![1563431286470.jpg](https://cdn.nlark.com/yuque/0/2019/jpeg/268444/1563431296214-3e22f795-aed5-4a6e-aa35-b31ed389ce2d.jpeg#align=left&display=inline&height=314&name=1563431286470.jpg&originHeight=314&originWidth=278&size=23556&status=done&width=278)
 联系我
 
 如果你有好的意见或建议，欢迎扫面下面二维码交流 👇
