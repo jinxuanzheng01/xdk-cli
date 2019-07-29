@@ -1,5 +1,5 @@
 const fs                     =  require('fs');                           // 文件读取模块
-const path                   =  require('path');                         // 路径模块
+const path                   =  require('path');                         // 路径模块const spawn                  =  require('cross-spawn');                  // 开启子进程
 
 
 module.exports = {
