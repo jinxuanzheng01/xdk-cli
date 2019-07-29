@@ -30,6 +30,47 @@
     xdk-cli -h
 ```
 
+## 项目目录结构
+
+1. 小程序项目默认开发目录
+``` 
+    # 目录结构
+    - app(小程序目录)
+        - pages
+        - app.js
+        - app.json
+        - project.config.json
+    - xdk.config.js
+    - xdk.verison.json
+
+    # xdk.config.js 设置
+    module.exports = {
+        entry: './app'
+    }
+```
+
+2. gulp/rollup/webpack 等编译形式目录
+```
+    # 目录结构
+    - dist
+    - src(小程序目录)
+        - pages
+        - app.js
+        - app.json
+        - project.config.json
+    - xdk.config.js
+    - xdk.verison.json
+
+    # xdk.config.js 设置
+    module.exports = {
+        entry: './src',
+        output: './dist'
+    }
+```
+
+
+
+
 ## 创建配置文件
 
 需要在项目目录下创建xdk.config.js
@@ -38,11 +79,11 @@
 module.exports = {
 
     // 小程序路径(可选，默认当前目录)
-    entry: './',
+    entry: './src',
 
     // 小程序输出文件(可选，默认等于entry)
     // 使用gulp，webpack等打包工具开发会导致开发者编辑文件目录和微信编辑器使用目录不同，需要手动进行指定
-    output: './'
+    output: './dist'
 
     // 模版文件夹目录(可选，默认使用cli默认模版，使用默认模版情况下false即可)
     template: './template',
