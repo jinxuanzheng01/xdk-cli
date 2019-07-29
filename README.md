@@ -1,9 +1,15 @@
 # xdk-cli
 
-微信小程序cli脚手架，从目前小打卡的脚手架抽离出来的部分功能
+> 微信小程序cli脚手架，从目前小打卡的脚手架抽离出来的部分功能
 
-目前只有快速创建模版（页面/组件）功能，后续会逐步增加自动化发布，版本号控制，环境变量切换，自动生成文档等一些有趣实用的功能
+目前提供了：
+- 快速创建启动模版功能【页面 / 组件】
+- 发布体验版功能，
+- 设置版本号，版本描述功能
+- 自定义指令功能
 
+
+注：自定义指令配合发布钩子可以做更多有趣的事情，例如下文配置文件中的的**更换环境变量**，**提交版本commit**等
 
 觉得有用的小伙伴希望可以点个star～ 😄😄😄
 
@@ -47,13 +53,25 @@ module.exports = {
         // 发布之前（注：必须返回一个Promise对象）
         // 参数answer 为之前回答一系列问题的结果
         before(answer) {
-            console.log('要开始发布了');
+            this.spawnSync('gulp', [`--env=${answer.isRelease ?'online' : 'stage'}`]);
             return Promise.resolve();
         },
 
         // 发布之后（注：必须返回一个Promise对象）
         after(answer) {
-            console.log('发布结束了');
+        
+            // 是否提交git commit 
+            let {isCommitGitLog} = await inquirerGitCommit.call(this);
+
+            // 当为正式版本时进行的操作
+            if (!!answer.isRelease) {
+                // 修改本地version code
+                await rewriteVersionCode.call(this);
+
+                // 提交git log
+                !!isCommitGitLog && await commitGitLog.call(this);
+            }
+
             return Promise.resolve();
         }
     },
@@ -99,7 +117,29 @@ module.exports = {
         }
     ],
 };
+
+// 询问是否提交git记录
+function inquirerGitCommit() {
+    return this.inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'isCommitGitLog',
+            message: '是否提交git log ?'
+        }
+    ])
+}
+
+// 提交git commit 到log
+function commitGitLog() {
+    return new Promise((resolve, reject) => {
+        this.spawnSync('git', ['add', '.']);
+        this.spawnSync('git', ['commit', '-m', `docs: 更改版本号为${versionConf.version}`]);
+        resolve();
+    });
+}
+
 ```
+
 
 ## 创建模版文件
 
@@ -306,13 +346,6 @@ function inquirerEnvAsync() {
     ]);
 }
 ```
-
-
-
-
-
-
-
 
 # 联系我
 
