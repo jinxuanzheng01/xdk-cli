@@ -42,6 +42,15 @@
         - app.js
         - app.json
         - project.config.json
+    - template
+        - page
+            - page.js
+            - page.json
+            - page.wxml
+            - page.wxss
+        - component
+            - component.js
+            ...
     - xdk.config.js
     - xdk.verison.json
 
@@ -60,6 +69,11 @@
         - app.js
         - app.json
         - project.config.json
+    - template
+        - page
+           ... 
+        - component
+           ...
     - xdk.config.js
     - xdk.verison.json
 
@@ -196,7 +210,7 @@ function commitGitLog() {
     xdk-cli create
 
     # 选择创建模式
-    ? Select the mode you want to create (Use arrow keys)
+    ? 选择你想生成的模版类型：(Use arrow keys)
     ❯ page
       component
 ```
@@ -205,10 +219,10 @@ function commitGitLog() {
 
 ```bash
     # 输入页面名称
-    ? Set page name (e.g: index):
+    ? 设置 page 的名字 (例如: index):
 
     # 选择所属分包（none为主包）
-    ? Set page ownership module (Use arrow keys or type to search)
+    ? 设置页面所属的分包 (Use arrow keys or type to search)
 
     # 创建成功
     >> createPage success
@@ -219,16 +233,16 @@ function commitGitLog() {
 
 ```bash
     # 输入组件名称
-    ? Set component name (e.g: index):
+    ? 设置 component 的名字 (例如: swiper-card):
 
     # 选择组件所属范围
-    ? Select component scope (Use arrow keys)
+    ? 设置组件所属的作用域 (Use arrow keys)
     ❯ global
       module
       page
 
     # 选择所属页面/分包/全局范围
-    Set component ownership pages
+    ？设置组件所属的页面
     ❯ index
     logs
     user
@@ -249,11 +263,9 @@ function commitGitLog() {
         template: './template'
     };
 ```
-小程序目录结构如下，component同理
+小程序目录结构详情见上文 【**项目目录结构**】
 
-![1563431286470.jpg](https://cdn.nlark.com/yuque/0/2019/jpeg/268444/1563431296214-3e22f795-aed5-4a6e-aa35-b31ed389ce2d.jpeg#align=left&display=inline&height=314&name=1563431286470.jpg&originHeight=314&originWidth=278&size=23556&status=done&width=278)
-
-## 自动发布体验版
+## 自动化发布体验版
 > 目前只支持mac版本，作者缺乏windows开发环境（比较懒），如果有朋友对该项目感兴趣可以参与进来
 1. 创建版本号文件，xdk.config.json
 
